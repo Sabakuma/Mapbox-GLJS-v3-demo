@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Mapbox 3D Map</title>
+<script src='https://api.mapbox.com/mapbox-gl-js/v3.0.0-beta.1/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v3.0.0-beta.1/mapbox-gl.css' rel='stylesheet' />
+
+</head>
+<body>
+    <div id='map' style='width: 500x; height: 500px;'></div>
+    <script>
+    mapboxgl.accessToken = 'YOUR_ACCESS_TOKEN';
+    const map = new mapboxgl.Map({
+        container: 'map', 
+        center: [139.749, 35.668], 
+        pitch: 60,
+        bearing: -30,
+        zoom: 16, 
+    });
+map.on('style.load', () =>{
+    map.setConfigProperty('basemap', 'showPlaceLabels', false); //Hide Place labels
+    map.setConfigProperty('basemap', 'showRoadLabels', false); //Hide Road labels
+    map.setConfigProperty('basemap', 'showPointOfInterestLabels', false); //Hide POI labels
+    map.setConfigProperty('basemap', 'showTransitLabels', false); //Hide transit labels
+    map.setConfigProperty('basemap', 'lightPreset', 'night'); //Night mode
+});
+    </script>
+</body>
+
+</html>
