@@ -9,8 +9,14 @@
 </head>
 <body>
     <div id='map' style='width: 500x; height: 500px;'></div>
-    <script>
-    mapboxgl.accessToken = 'YOUR_ACCESS_TOKEN';
+<script src="config.js"></script>
+<script>
+  // セキュリティ情報は config.js ファイルから読み込まれる
+  mapboxgl.accessToken = config.MAPBOX_ACCESS_TOKEN;
+  // 他の処理
+</script>
+<script>
+mapboxgl.accessToken = config.MAPBOX_ACCESS_TOKEN;
     const map = new mapboxgl.Map({
         container: 'map', 
         center: [139.749, 35.668], 
